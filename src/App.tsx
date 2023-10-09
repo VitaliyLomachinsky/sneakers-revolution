@@ -5,20 +5,26 @@ import './App.scss';
 import Homepage from './layout/Homepage/Homepage';
 import Header from './layout/Header/Header';
 import Basket from './layout/Basket/Basket';
+import { useState } from 'react';
+import Search from './components/Search';
 
 
 function App() {
-  
+
+  let search = false;
+
 
   return (
     <>
       <div className='App'>
         <Header />
-        <main className='container'>
+        {search && <Search />}
+        <main className={search ? "container" : "container-padding_top"}>
+
           <Homepage />
         </main>
       </div>
-      <Basket enable={true} />
+      <Basket enable={false} />
     </>
   );
 }

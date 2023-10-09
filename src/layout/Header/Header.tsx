@@ -1,6 +1,8 @@
 import { BsFillBasketFill, BsSearch } from "react-icons/bs";
+import Search from "../../components/Search";
 
 const Header = () => {
+
     return <header className="header">
         <h1 className="header_title">Sneakers-Revolution</h1>
         <ul className="header_navigate">

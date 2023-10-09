@@ -1,10 +1,10 @@
 $base_padding: 0 50px;
-$base_transition: 0.2s;
+$base_transition: 0.3s;
 
 body {
   background-color: #e0e0e0;
   font-family: "Open Sans", sans-serif;
-  overflow: hidden;
+
 }
 
 .App {
@@ -143,13 +143,82 @@ body {
     }
   }
 
+  .search {
+
+    position: fixed;
+    margin-top: 70px;
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    transition: 0.3s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &_inner {
+
+      height: 30px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &_input {
+        font-size: 18px;
+        width: 500px;
+        height: 30px;
+        margin-right: 20px;
+
+
+        @media (max-width: 850px) {
+          width: 400px;
+          margin-right: 10px;
+        }
+
+        @media (max-width: 515px) {
+          width: 250px;
+          margin-right: 2px;
+        }
+      }
+
+      &_search-btn {
+        border-radius: 5px;
+        outline: 0;
+        border: 1px solid white;
+        cursor: pointer;
+        width: 80px;
+        height: 30px;
+        font-size: 16px;
+
+        @media (max-width: 850px) {
+          width: 40px;
+          font-size: 14px;
+        }
+
+        @media (max-width: 515px) {
+          width: 30px;
+          font-size: 10px;
+        }
+      }
+    }
+
+    @media (max-width: 850px) {
+      margin-top: 0px;
+      position: static;
+    }
+
+  }
+
   .container {
     width: 1200px;
     height: 560px;
-    border: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
     margin: 0 auto;
-    padding: 10px 20px;
-    padding-top: 80px;
+    padding: 130px 20px 10px 20px;
+
 
     @media (max-width: 1200px) {
       width: 850px;
@@ -162,6 +231,28 @@ body {
   }
 }
 
+.container-padding_top {
+  width: 1200px;
+  height: 560px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  margin: 0 auto;
+
+  padding: 80px 20px 10px 20px;
+
+
+  @media (max-width: 1200px) {
+    width: 850px;
+  }
+
+  @media (max-width: 850px) {
+    padding-top: 10px;
+    width: 100%;
+  }
+
+}
+
 .basket {
   position: fixed;
   top: 0;
@@ -169,7 +260,7 @@ body {
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.3);
-  
+
 
   &_side-menu {
     width: 300px;
@@ -182,7 +273,7 @@ body {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
       rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     transform-style: preserve-3d;
-   
+
     &_close-btn {
       position: absolute;
       width: 40px;
@@ -206,6 +297,7 @@ body {
         height: auto;
       }
     }
+
     &_close-btn_outsise {
       transform: translateX(370px);
     }
