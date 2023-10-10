@@ -7,9 +7,11 @@ import './App.scss';
 import Homepage from './layout/Homepage/Homepage';
 import Header from './layout/Header/Header';
 import Basket from './layout/Basket/Basket';
-
-import Search from './components/Search';
 import About from './layout/About/About';
+import Search from './components/Search';
+import Contact from "./layout/Contact/Contact";
+
+
 
 
 
@@ -27,6 +29,7 @@ function App() {
           <Routes>
             <Route path="" element={<Homepage />} />
             <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
           </Routes>
         </main>
       </div>
