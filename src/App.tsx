@@ -1,3 +1,5 @@
+import { Route, Routes } from "react-router-dom";
+
 //style
 import './App.scss';
 
@@ -8,6 +10,7 @@ import Basket from './layout/Basket/Basket';
 
 import Search from './components/Search';
 import About from './layout/About/About';
+
 
 
 function App() {
@@ -21,8 +24,10 @@ function App() {
         <Header />
         {search && <Search />}
         <main className={search ? "container" : "container-padding_top"}>
-          {/* <Homepage /> */}
-          <About />
+          <Routes>
+            <Route path="" element={<Homepage />} />
+            <Route path="about" element={<About />} />
+          </Routes>
         </main>
       </div>
       <Basket enable={false} />

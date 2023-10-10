@@ -1,15 +1,17 @@
 import { BsFillBasketFill, BsSearch } from "react-icons/bs";
-import Search from "../../components/Search";
+import { Link } from 'react-router-dom';
+
 
 const Header = () => {
 
+
     return <header className="header">
-        <h1 className="header_title">Sneakers-Revolution</h1>
+        <Link to="/"><h1 className="header_title">Sneakers-Revolution</h1></Link>
         <ul className="header_navigate">
-            <li>Catalog</li>
-            <li>Relese</li>
-            <li>Contact</li>
-            <li className="active_header_navigate">About</li>
+            <Link to="/catalog"><li>Catalog</li></Link>
+            <Link to="/relese"> <li>Relese</li></Link>
+            <Link to="/contact"> <li>Contact</li></Link>
+            <Link to="/about"> <li className="active_header_navigate">About</li></Link>
         </ul>
 
         <div className="header_search-and-basket">

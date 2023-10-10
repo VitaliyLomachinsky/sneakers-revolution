@@ -67,9 +67,10 @@ body {
 
       .active_header_navigate {
         background-color: black;
-        color: white;
+
         border-top: 1px solid black;
         border-bottom: 1px solid black;
+        color: white;
       }
 
       @media (max-width: 1200px) {
@@ -245,14 +246,11 @@ body {
       }
 
       &_help {
-        border-top: 1px solid black;
         align-items: center;
         padding-top: 20px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-      
-        
 
         &_text {
           font-size: 24px;
@@ -268,10 +266,12 @@ body {
           cursor: pointer;
         }
       }
+
+      @media (max-width: 600px) {
+        width: 100%;
+      }
     }
     &_side-menu {
-      position: sticky;
-      top: 120px;
       width: 300px;
       height: fit-content;
 
@@ -306,6 +306,14 @@ body {
           text-decoration: underline;
         }
       }
+
+      @media (max-width: 600px) {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      display: block;
     }
   }
 }
