@@ -5,8 +5,9 @@ import './App.scss';
 import Homepage from './layout/Homepage/Homepage';
 import Header from './layout/Header/Header';
 import Basket from './layout/Basket/Basket';
-import { useState } from 'react';
+
 import Search from './components/Search';
+import About from './layout/About/About';
 
 
 function App() {
@@ -20,8 +21,8 @@ function App() {
         <Header />
         {search && <Search />}
         <main className={search ? "container" : "container-padding_top"}>
-
-          <Homepage />
+          {/* <Homepage /> */}
+          <About />
         </main>
       </div>
       <Basket enable={false} />

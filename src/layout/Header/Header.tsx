@@ -8,8 +8,8 @@ const Header = () => {
         <ul className="header_navigate">
             <li>Catalog</li>
             <li>Relese</li>
-            <li className="active_header_navigate">Contact</li>
-            <li>About</li>
+            <li>Contact</li>
+            <li className="active_header_navigate">About</li>
         </ul>
 
         <div className="header_search-and-basket">
