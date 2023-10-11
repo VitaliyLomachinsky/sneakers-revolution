@@ -334,7 +334,8 @@ body {
 
       &_lefttext {
         width: 600px;
-        height: 600px;
+        height: fit-content;
+        margin-bottom: 20px;
 
         &_titleblock {
           color: white;
@@ -360,15 +361,132 @@ body {
             a {
               color: lightblue;
               text-decoration: underline;
+              cursor: pointer;
             }
           }
+
+          &_bottom {
+            margin-top: 50px;
+            color: black;
+
+            h4 {
+              padding-bottom: 10px;
+            }
+          }
+        }
+
+        @media (max-width: 1200px) {
+          width: 500px;
+          padding: 20px;
+        }
+
+        @media (max-width: 850px) {
+          width: fit-content;
+          padding: 20px;
         }
       }
       &_rightform {
         border: 1px solid black;
         background-color: white;
         width: 450px;
-        height: 600px;
+        height: fit-content;
+
+        &_form {
+          display: block;
+          align-items: center;
+          padding: 20px 0 10px 0;
+
+          &_row {
+            display: flex;
+            flex-direction: column;
+            padding: 5px 20px;
+
+            label {
+              font-size: 14px;
+              font-weight: bold;
+              margin-bottom: 3px;
+            }
+
+            input {
+              height: 30px;
+              font-size: 16px;
+            }
+
+            textarea {
+              height: 80px;
+              font-size: 16px;
+            }
+
+            &_button-container {
+              display: flex;
+              justify-content: center;
+
+              &_button {
+                height: 40px;
+                width: 120px;
+                color: white;
+                background-color: black;
+                outline: none;
+                border: 1px solid white;
+                cursor: pointer;
+              }
+            }
+          }
+
+          &_clear-text {
+            font-size: 14px;
+
+            a {
+              color: rgb(222, 72, 72);
+              text-decoration: underline;
+              cursor: pointer;
+            }
+          }
+          &_checkboxarea {
+            margin-top: 5px;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: fit-content;
+            font-weight: 500;
+
+            span {
+              margin-left: 10px;
+              font-size: 14px;
+            }
+
+            &_icon {
+              width: 60px;
+              height: 60px;
+            }
+          }
+        }
+
+        @media (max-width: 850px) {
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 1200px) {
+        height: 470px;
+      }
+
+      @media (max-width: 850px) {
+        display: inline-block;
+        height: 410px;
+      }
+
+      @media (max-width: 480px) {
+        display: inline-block;
+        height: 500px;
+      }
+
+      @media (max-width: 380px) {
+        display: inline-block;
+        height: 570px;
       }
     }
   }

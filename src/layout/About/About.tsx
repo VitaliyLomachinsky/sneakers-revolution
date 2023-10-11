@@ -10,7 +10,7 @@ import Worldwide from "./About_pages/Worldwide";
 
 
 const About = () => {
-    const [activeListItem, setActiveListitem] = useState("pay_order");
+    const [activeListItem, setActiveListitem] = useState("user_agreement");
     return <div className="about">
         <div className="about_main">
             {activeListItem == "user_agreement" ? <User_agreement /> : <></>}
