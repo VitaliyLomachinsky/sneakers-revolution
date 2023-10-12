@@ -7,6 +7,8 @@ body {
 }
 
 .App {
+  transition: 1.5s;
+
   .header {
     width: 100%;
     min-height: 70px;
@@ -561,7 +563,7 @@ body {
               margin-bottom: 30px;
             }
 
-            button {
+            &_button {
               margin-left: 20px;
               width: 150px;
               font-size: 16px;
@@ -615,35 +617,37 @@ body {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: 0.4s;
+  transition-timing-function: ease-in;
 
   &_side-menu {
-    width: 300px;
+    width: 400px;
     height: 100vh;
-    transition: 0.5s;
+    transition: 0.4s;
     background-color: white;
     right: 0;
     top: 0;
     position: absolute;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
       rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-    transform-style: preserve-3d;
 
-    &_close-btn {
+    .basket_close-btn {
       position: absolute;
+      z-index: -10;
+
       width: 40px;
       height: 40px;
       border: 1px solid black;
-      top: 10px;
-      left: -50px;
+      top: 20px;
+      left: -55px;
       border-radius: 5px;
       display: flex;
       justify-content: center;
       align-items: center;
       background-color: black;
-      transition: 1.5s;
-      transition-timing-function: ease-in;
-      transform: translateZ(-10px);
+      transition: 0.5s;
+      transition-timing-function: ease-in-out;
       cursor: pointer;
 
       &_icon {
@@ -651,22 +655,45 @@ body {
         color: white;
         height: auto;
       }
+
+      &:hover {
+        transform: scale(1.2);
+        transition: 0.1s;
+        border: 1px solid white;
+      }
     }
 
-    &_close-btn_outsise {
-      transform: translateX(370px);
+    .close-btn_hide {
+      transform: translateX(500px);
     }
 
     &_title {
-      text-decoration: underline;
       text-align: center;
       padding: 10px 0 5px 0;
     }
+
+    .basket_total {
+      transition: 0.5s;
+      transition-timing-function: ease-in;
+
+      position: absolute;
+      z-index: -100;
+
+      width: 350px;
+      height: 300px;
+      top: 80px;
+      left: -350px;
+      background-color: #d8d8d8;
+    }
+
+    .basket_total_hide {
+      transform: translateX(750px);
+      z-index: -50px;
+    }
   }
 
-  &_side-menu-outside {
-    transform: translateX(350px);
-    transition-delay: 0.5s;
+  &_side-menu_hide {
+    transform: translateX(400px);
     transition-timing-function: ease-in;
   }
 }
