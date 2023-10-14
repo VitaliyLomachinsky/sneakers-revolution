@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import Basket_total from "./Components/Basket_total";
+import Basket_Side_menu from "./Components/Basket_Side-menu";
 
 const Basket = () => {
   const [basketShow, setBasketShow] = useState(true);
@@ -27,6 +28,7 @@ const Basket = () => {
         className={`basket_side-menu${isHideSideBar ? "" : " basket_side-menu_hide"
           }`}
       >
+        <Basket_Side_menu />
         <div className={`basket_close-btn ${isHide ? "" : " close-btn_hide"}`}>
           <AiOutlineClose
             className="basket_close-btn_icon"
