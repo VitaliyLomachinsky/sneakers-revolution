@@ -18,7 +18,7 @@ const Basket = () => {
       if (isHide == false) {
         setBasketShow(false);
       }
-    }, 1150);
+    }, 1000);
     return () => clearTimeout(timer);
   }, [isHide]);
 

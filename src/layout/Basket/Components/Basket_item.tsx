@@ -1,3 +1,4 @@
+import { AiOutlineClose } from "react-icons/ai";
 
 const Basket_item = () => {
     return <div className="basket_item">
@@ -14,7 +15,7 @@ const Basket_item = () => {
                     <span>1</span>
                     <div>+</div>
                 </div>
-                <div className="basket_item_remove">X</div>
+                <div className="basket_item_remove"><AiOutlineClose></AiOutlineClose></div>
             </div>
             <div className="basket_item_favorites">Move to Favorites</div>
         </div>
