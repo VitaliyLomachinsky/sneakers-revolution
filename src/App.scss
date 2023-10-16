@@ -6,8 +6,6 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
-
-
 .App {
   transition: 1.5s;
 
@@ -328,10 +326,12 @@ body {
   .contact {
     &_up {
       background: rgb(34, 34, 34);
-      background: linear-gradient(90deg,
-          rgba(34, 34, 34, 0.9724264705882353) 0%,
-          rgba(0, 0, 0, 1) 0%,
-          rgba(0, 0, 0, 0.9164040616246498) 100%);
+      background: linear-gradient(
+        90deg,
+        rgba(34, 34, 34, 0.9724264705882353) 0%,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0.9164040616246498) 100%
+      );
       width: 100%;
       height: 400px;
       display: flex;
@@ -636,8 +636,130 @@ body {
     font-weight: 700;
   }
 
-  &_side-menu {
+  .basket_total {
+    transition: 0.5s;
+    transition-timing-function: ease-in;
 
+    position: absolute;
+    z-index: -100;
+
+    width: 370px;
+    height: fit-content;
+    top: 80px;
+    right: 450px;
+    background-color: #e5eef5;
+
+    .basket_total_inner {
+      padding: 20px;
+
+      .basket_promo_wrapper {
+        margin-top: 20px;
+
+        .basket_promo {
+          width: 230px;
+          background-color: transparent;
+          border: 0;
+          outline: 0;
+          border-bottom: 1px solid black;
+          font-size: 14px;
+          padding: 5px 10px 5px 0;
+        }
+      }
+
+      .basket_table {
+        margin-top: 30px;
+        width: 100%;
+        border-spacing: table;
+
+        td {
+          padding: 7px 10px 0 0;
+        }
+
+        tr {
+          &:first-child {
+            font-weight: bold;
+          }
+        }
+
+        .table_last_child {
+          font-weight: bold;
+          font-size: 24px;
+
+          td {
+            padding-top: 40px;
+          }
+        }
+      }
+
+      .basket_checkout {
+        display: flex;
+
+        flex-direction: column;
+        margin: 40px 0 0 0;
+
+        .basket_checkout-btn {
+          width: 200px;
+
+          margin: 0 auto;
+          display: block;
+          border-radius: 25px;
+          font-size: 18px;
+          height: 40px;
+          outline: 0;
+          border: 1px solid black;
+          cursor: pointer;
+
+          &:first-child {
+            margin-bottom: 10px;
+            color: white;
+            background-color: black;
+          }
+        }
+      }
+    }
+  }
+
+  .basket_total_hide {
+    transform: translateX(850px);
+    z-index: -50px;
+  }
+
+  .basket_close-btn {
+    position: absolute;
+    z-index: -20;
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    top: 20px;
+    right: 470px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    transition: 0.5s;
+    transition-timing-function: ease-in-out;
+    cursor: pointer;
+    border: 1px solid white;
+
+    &_icon {
+      width: 30px;
+      color: white;
+      height: auto;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.1s;
+      border: 1px solid white;
+    }
+  }
+
+  .close-btn_hide {
+    transform: translateX(600px);
+  }
+
+  &_side-menu {
     width: 450px;
     height: 100vh;
     transition: 0.4s;
@@ -648,9 +770,23 @@ body {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
       rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     padding: 20px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #7c7c7c;
+
+      border-radius: 25px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
 
     .basket_items {
-
       .basket_item {
         display: flex;
         margin: 30px 0;
@@ -658,7 +794,14 @@ body {
         .basket_item_img {
           width: 40%;
           height: 150px;
-          border: 1px solid black;
+
+          padding: 5px;
+          padding-right: 10px;
+          img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
         }
 
         .basket_item_text {
@@ -667,30 +810,54 @@ body {
 
           .basket_item_title {
             margin: 5px 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
           }
 
-          .basket_item_subtitle {}
-
+          .basket_item_subtitle {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+          }
 
           .basket_item_price-box {
             display: flex;
-            margin: 20px 0 30px 0;
+            margin: 10px 0 10px 0;
             justify-content: space-between;
             align-items: center;
-            border: 1px solid black;
 
+            padding: 5px 0;
 
-            .basket_item_price {}
+            .basket_item_price {
+              font-size: 22px;
+              padding: 5px;
+              font-weight: bold;
+            }
 
             .basket_item_quantity {
+              font-size: 24px;
               display: flex;
+              justify-content: space-between;
+              width: 80px;
+              padding: 0 10px;
+              border: 1px solid black;
+
+              div {
+              }
             }
 
             .basket_item_remove {
-              width: 30px;
-              height: auto;
+              cursor: pointer;
+              .remove_icon {
+                width: 25px;
+                height: auto;
+              }
             }
-
           }
 
           .basket_item_favorites {
@@ -698,150 +865,14 @@ body {
             cursor: pointer;
             margin-top: 20px;
             text-decoration: underline;
-
           }
         }
       }
-    }
-
-    .basket_close-btn {
-      position: absolute;
-      z-index: -10;
-
-      width: 40px;
-      height: 40px;
-      border: 1px solid black;
-      top: 20px;
-      left: -55px;
-      border-radius: 5px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: black;
-      transition: 0.5s;
-      transition-timing-function: ease-in-out;
-      cursor: pointer;
-
-      &_icon {
-        width: 30px;
-        color: white;
-        height: auto;
-      }
-
-      &:hover {
-        transform: scale(1.2);
-        transition: 0.1s;
-        border: 1px solid white;
-      }
-    }
-
-    .close-btn_hide {
-      transform: translateX(600px);
-
     }
 
     &_title {
       text-align: center;
       padding: 10px 0 5px 0;
-    }
-
-    .basket_total {
-      transition: 0.5s;
-      transition-timing-function: ease-in;
-
-      position: absolute;
-      z-index: -100;
-
-      width: 370px;
-      height: fit-content;
-      top: 80px;
-      left: -370px;
-      background-color: #E5EEF5;
-
-
-      .basket_total_inner {
-        padding: 20px;
-
-
-
-        .basket_promo_wrapper {
-          margin-top: 20px;
-
-          .basket_promo {
-            width: 230px;
-            background-color: transparent;
-            border: 0;
-            outline: 0;
-            border-bottom: 1px solid black;
-            font-size: 14px;
-            padding: 5px 10px 5px 0;
-          }
-        }
-
-        .basket_table {
-          margin-top: 30px;
-          width: 100%;
-          border-spacing: table;
-
-          td {
-            padding: 7px 10px 0 0;
-          }
-
-          tr {
-            &:first-child {
-              font-weight: bold;
-            }
-
-          }
-
-          .table_last_child {
-            font-weight: bold;
-            font-size: 24px;
-
-
-            td {
-              padding-top: 40px;
-            }
-          }
-
-        }
-
-        .basket_checkout {
-          display: flex;
-
-
-          flex-direction: column;
-          margin: 40px 0 0 0;
-
-          .basket_checkout-btn {
-            width: 200px;
-
-            margin: 0 auto;
-            display: block;
-            border-radius: 25px;
-            font-size: 18px;
-            height: 40px;
-            outline: 0;
-            border: 1px solid black;
-            cursor: pointer;
-
-            &:first-child {
-              margin-bottom: 10px;
-              color: white;
-              background-color: black;
-            }
-
-          }
-        }
-      }
-
-
-
-    }
-
-    .basket_total_hide {
-      transform: translateX(850px);
-      z-index: -50px;
     }
   }
 

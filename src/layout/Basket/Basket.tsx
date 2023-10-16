@@ -18,26 +18,27 @@ const Basket = () => {
       if (isHide == false) {
         setBasketShow(false);
       }
-    }, 1000);
+    }, 1100);
     return () => clearTimeout(timer);
   }, [isHide]);
 
   return basketShow ? (
     <div className="basket">
       <div
-        className={`basket_side-menu${isHideSideBar ? "" : " basket_side-menu_hide"
-          }`}
+        className={`basket_side-menu${
+          isHideSideBar ? "" : " basket_side-menu_hide"
+        }`}
       >
         <Basket_Side_menu />
-        <div className={`basket_close-btn ${isHide ? "" : " close-btn_hide"}`}>
-          <AiOutlineClose
-            className="basket_close-btn_icon"
-            onClick={() => setIsHide(!isHide)}
-          ></AiOutlineClose>
-        </div>
-        <div
-          className={`basket_total ${isHide ? "" : " basket_total_hide"}`}
-        ><Basket_total /></div>
+      </div>
+      <div className={`basket_close-btn ${isHide ? "" : " close-btn_hide"}`}>
+        <AiOutlineClose
+          className="basket_close-btn_icon"
+          onClick={() => setIsHide(!isHide)}
+        ></AiOutlineClose>
+      </div>
+      <div className={`basket_total ${isHide ? "" : " basket_total_hide"}`}>
+        <Basket_total />
       </div>
     </div>
   ) : (
