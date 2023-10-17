@@ -4,7 +4,7 @@ import Basket_total from "./Components/Basket_total";
 import Basket_Side_menu from "./Components/Basket_Side-menu";
 
 const Basket = () => {
-  const [basketShow, setBasketShow] = useState(true);
+  const [basketShow, setBasketShow] = useState(false);
   const [isHide, setIsHide] = useState(true);
   const [isHideSideBar, setIsHideSideBar] = useState(true);
 

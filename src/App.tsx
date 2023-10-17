@@ -11,6 +11,7 @@ import About from "./layout/About/About";
 import Search from "./components/Search";
 import Contact from "./layout/Contact/Contact";
 import New_Release from "./layout/New_Release/New_Release";
+import Catalog from "./layout/Catalog/Catalog";
 
 function App() {
   let search = false;
@@ -26,6 +27,7 @@ function App() {
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
             <Route path="new_release" element={<New_Release />} />
+            <Route path="catalog" element={<Catalog />} />
           </Routes>
         </main>
         <Basket />
