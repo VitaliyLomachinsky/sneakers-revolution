@@ -1,7 +1,7 @@
 import { AiOutlineClose } from "react-icons/ai";
 
 const Top_menu_filters = () => {
-  const filters: string[] = ["41", "black", "grey"];
+  const filters: string[] = ["41", "black", "grey", "black"];
   return (
     <div className="top-menu_filters">
       {filters.length > 1 ? (
