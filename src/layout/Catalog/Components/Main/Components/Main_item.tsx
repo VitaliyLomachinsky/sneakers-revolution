@@ -1,4 +1,5 @@
-import Stars from "../../../../components/Stars";
+import Stars from "../../../../../components/Stars";
+import Follow from "./Follow";
 
 const Main_item = () => {
   return (
@@ -30,6 +31,8 @@ const Main_item = () => {
           </div>
         </div>
       </div>
+      <div className="item_discount">-37%</div>
+      <Follow status={true} />
     </div>
   );
 };
