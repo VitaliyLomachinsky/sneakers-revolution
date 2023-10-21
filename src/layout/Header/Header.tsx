@@ -1,6 +1,8 @@
 import { BsFillBasketFill, BsSearch } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 
+import Search_and_basket from "./Components/Search_and_basket";
+
 
 const Header = () => {
 
@@ -13,11 +15,7 @@ const Header = () => {
             <Link to="/contact"> <li>Contact</li></Link>
             <Link to="/about"> <li className="active_header_navigate">About</li></Link>
         </ul>
-
-        <div className="header_search-and-basket">
-            <BsSearch className="header_search-and-basket_search"></BsSearch>
-            <BsFillBasketFill className="header_search-and-basket_basket"></BsFillBasketFill>
-        </div>
+        <Search_and_basket />
     </header>
 }
 

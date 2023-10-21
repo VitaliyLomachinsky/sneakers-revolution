@@ -12,27 +12,29 @@ import Search from "./components/Search";
 import Contact from "./layout/Contact/Contact";
 import New_Release from "./layout/New_Release/New_Release";
 import Catalog from "./layout/Catalog/Catalog";
+import { useAppSelector } from "./Redux/hook";
 
 function App() {
-  let search = false;
+  const search = useAppSelector(state => state.UI.search);
 
   return (
-    <>
-      <div className="App">
-        <Header />
-        {search && <Search />}
-        <main className={search ? "container" : "container-padding_top"}>
-          <Routes>
-            <Route path="" element={<Homepage />} />
-            <Route path="about" element={<About />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="new_release" element={<New_Release />} />
-            <Route path="catalog" element={<Catalog />} />
-          </Routes>
-        </main>
-        <Basket />
-      </div>
-    </>
+
+
+    <div className="App" >
+      <Header />
+      <Search />
+      <main className={search ? "container" : "container-padding_top"}>
+        <Routes>
+          <Route path="" element={<Homepage />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="new_release" element={<New_Release />} />
+          <Route path="catalog" element={<Catalog />} />
+        </Routes>
+      </main>
+      <Basket />
+    </div>
+
   );
 }
 
